@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "env": {
+        "DATABASE_URL": "postgres://bot_db_7rxq_user:jgQP8J7oytU3eObtmCY6kD38mLBlt163@dpg-ci5gvp5ph6eh6mrk3a7g-a.frankfurt-postgres.render.com/bot_db_7rxq",
+        "BOT_API_TOKEN": "6246592005:AAG14yOl27hAXuf-pizB912FKV1RSENGDaI"
+    },
+    "builds": [
+        {
+            "src": "src/main.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "src/main.ts",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ]
+        }
+    ]
+}
